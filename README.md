@@ -7,7 +7,7 @@ It runs on an internal API.
 # Developer
  [Debbie Meda](https://github.com/bitmonst3r)
 
-# Depolyment & Database through Heroku
+# Deployment & Database through Heroku
 Link to site:  https://game-search-engine-fullstack.herokuapp.com/
 
 # Front-End
