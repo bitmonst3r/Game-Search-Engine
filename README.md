@@ -1,4 +1,30 @@
-# Game-Search-Engine
-This web app searches a database of new games by title,  platform, mode, genre or price. They can then be added to a wishlist and purchased.
+# Game Search Engine - *Navi*
 
-Deployed through heroku: https://game-search-engine-fullstack.herokuapp.com/
+This web application searches a database of new games by title,  platform, 
+mode, genre or price. They can then be added to a wishlist and purchased.
+It runs on an internal API.
+
+# Developer
+ [Debbie Meda](https://github.com/bitmonst3r)
+
+# Depolyment & Database through Heroku
+Link to site:  https://game-search-engine-fullstack.herokuapp.com/
+
+# Back-End
+- Node.js
+- MySQL
+- Express
+- Express-Session
+- Bcrypt
+- Javascript
+
+# Front-End
+- HTML
+- CSS
+- EJS
+- Ajax
+- Bootstrap
+- jQuery
+- JavaScript
+
+
