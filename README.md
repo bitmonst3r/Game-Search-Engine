@@ -10,14 +10,6 @@ It runs on an internal API.
 # Depolyment & Database through Heroku
 Link to site:  https://game-search-engine-fullstack.herokuapp.com/
 
-# Back-End
-- Node.js
-- MySQL
-- Express
-- Express-Session
-- Bcrypt
-- Javascript
-
 # Front-End
 - HTML
 - CSS
@@ -26,5 +18,14 @@ Link to site:  https://game-search-engine-fullstack.herokuapp.com/
 - Bootstrap
 - jQuery
 - JavaScript
+
+# Back-End
+- Node.js
+- MySQL
+- Express
+- Express-Session
+- Bcrypt
+- Javascript
+
 
 
