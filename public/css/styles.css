@@ -1,0 +1,309 @@
+body
+{
+	background-image: url(../img/dark-background.jpg);
+	width: 100%;
+	box-sizing: border-box;
+	color: white !important;
+	background-size: cover;                      
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+header {
+	background: rgba(255,255,255,.2);
+	width: 100%;
+	display: flex;
+}
+
+header .container {
+	margin: 30px auto;
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	position: relative;
+}
+
+.logo-wrapper {
+	display: block;
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	background-color: #1e252c;
+	position: absolute;
+	padding: 0;
+}
+
+.slogan-wrapper {
+  width: 200px;
+	position: absolute;
+	height: 20px;
+	left: 120px;
+	color: white;
+}
+
+.site-name {
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	letter-spacing: .5;
+	margin-bottom: 2px;
+}
+
+.slogan {
+	font-size: 13px;
+}
+
+.logo-wrapper:after {
+	content: '';
+	bottom: -30px;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 30px 50px 0 50px;
+	border-color: #1e252c transparent transparent transparent;
+}
+
+.logo-main
+{
+  background-image: url(../img/Navi-Logo.png);
+	width: 71px;
+	height: 120%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: 0;
+	position: relative;
+	background-size: contain;
+	margin: auto;
+	background-position: center 26px;
+	z-index: 3;
+	transition: all 250ms;
+}
+
+a:hover .logo_main {
+	transform: scale(1.05);
+}
+
+header nav {
+margin-left: auto;
+}
+
+.container {
+	height:fit-content;
+  width: 70%;
+  margin: 70px auto 50px auto;
+  max-width: unset;
+}
+
+.info-box {
+	background-color: white;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.inner-content 
+{
+	background-color: white;
+	border-radius: 6px;
+}
+
+.info-box h3 {
+	color: black;
+}
+
+/* Heading styles */
+.h1
+{
+  text-align: center;
+}
+
+.h3
+{
+  text-align: center;
+}
+
+.a
+{
+  margin-right: 10px;
+}
+
+.header span{
+	font-size: 2rem;
+}
+
+.column 
+{
+  float: left;
+  width: 50%;
+}
+
+.columnFoot
+{
+  column-gap: 10px;
+  text-align: center;
+	margin-bottom: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.emph 
+{
+  font-style: normal;
+  font-weight: bold;
+}
+
+hr
+{
+  color: black;
+  background-color: black;
+  border-color: black;
+}
+
+.hr1
+{
+  margin-top: 50px;
+  column-span: all;
+  border-color: black;
+}
+
+.btn-info {
+	color: white !important;
+}
+
+.btn-info:hover {
+	color: white;
+}
+
+.btn-outline-info:hover
+{
+  color: white;
+}
+
+.dropStyle
+{
+  font-size: 14px;
+  padding: 6px 9px;
+  margin-bottom: 0;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Collapsible advanced search styles */
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #1e252c;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  overflow: hidden;
+  background-color: #1e252c;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  margin-top: 5px;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.card {
+  width: 300px;
+	margin-top: 10px;
+	background: rgba(255,255,255,.2) !important;
+}
+
+.inner-card {
+	text-align: left;
+}
+
+#holder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+}
+
+img.card-img-top {
+	height: 250px;
+}
+
+a.wishlistBtn {
+	text-decoration: none;
+	color: white;
+	font-weight: 400;
+}
+
+a.wishlistBtn:hover {
+	color: white;
+}
+
+.wishlist .card {
+	width: 65%;
+  margin: 0 auto;
+  margin-top: 50px;
+	background-clip: content-box;
+}
+
+.wishlist .card-text {
+	font-size: 20px;
+  font-weight: bold;
+}
+
+a.gameLink {
+	color: white;
+}
+
+a.gameLink:hover {
+	color: rgb(31, 215, 247);
+}
+
+div.modal-content {
+	background-color: #1e252c !important;
+}
+
+.fa.fa-trash {
+	color: red;
+}
+
+.space {
+	height: 500px;
+}
+
+footer {
+	box-shadow: 0 50vh 0 50vh #000;
+}

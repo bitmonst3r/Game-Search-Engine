@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/styles.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/60e8cc941a.js" crossorigin="anonymous"></script>
+
+  <title>Navi</title>
+</head>
+<body class="background">
+	<%- include('partials/navigation.ejs') %>
+	<div class="wishlist">	
+		<div class="card p-4">
+			<div class="card-body text-center">
+			<h1 style="color:white;"> Wish List </h1>
+			<br>
+			<div style="text-align:justify;">
+			<%  for (i of games) { %>
+				<a href="#" class="deleteGame" game_Id="<%=i.gameId%>" userId="<%=id%>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+				<a gameId="<%= i.gameId %>"class="gameLink" href="#" style="text-decoration:none"> <%= i.title%> </a> 
+				<br><br>
+			<%  } %>
+			</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Modal -->
+	<div class="modal fade" id="gameInfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Game Info</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="gameInfo"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>   
+					<button class="btn btn-outline-info"><a href="" id="buy-game" class="wishlistBtn">Buy Game</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+   	$(".gameLink").on("click",displayGameInfo);
+		$(".deleteGame").on("click", deleteGame);
+
+    async function displayGameInfo(){
+
+    	var myModal = new bootstrap.Modal(document.getElementById('gameInfoModal'));
+      myModal.show();
+
+      let gameId = $(this).attr("gameId");
+      let url = `/api/getGameInfo?gameId=${gameId}`;
+      let response = await fetch(url);
+      let data = await response.json();
+      $("#gameInfo").html(`<img src="${data[0].image}" width="100"><br>${data[0].title} ${data[0].genre}<br>${data[0].platform}<br> ${data[0].mode}<br>${data[0].price}<br>${data[0].releaseDate}<br>`);
+			$("#buy-game").html(`<a href="${data[0].purchase}" id="buy-game" class="wishlistBtn">Buy Game</a>`);
+    }
+
+		function deleteGame() {
+			let gameId = $(this).attr("game_Id");
+			let userId = $(this).attr("userId");
+			console.log(userId);
+			console.log(gameId);
+			let confirmDelete = confirm(`DELETE record for ${gameId}`);
+
+			if (confirmDelete) {
+				window.location.href = `/wishlist/delete?gameId=${gameId}&&userId=${userId}`;
+			}
+		}
+
+	</script>
+
+	<div class="space">
+	</div>
+	<%- include('partials/footer.ejs') %>
+</body>
+</html>

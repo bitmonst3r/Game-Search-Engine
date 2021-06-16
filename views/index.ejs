@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navi</title>
+  <link href="/css/styles.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.12.0/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/60e8cc941a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="background">
+
+  <%- include('partials/navigation.ejs') %>
+
+	<br><br>
+	<div class="container" style="height: auto !important;">
+		<div class="info-box">
+			<h3>Navi - the new games search engine - Find your game!</h3>
+		</div>
+    <div class="columnFoot">
+      <div class="inner-content">
+
+        <div class="input-group">
+          <input type="text" id="input" class="form-control" placeholder="Enter game name"><button type="button" id="searchBtn" class="btn btn-info" onclick="findGame()"><i class="fas fa-robot"></i></button>
+        </div><br>
+
+        <div class="platform" style="float:left;">
+          <select name="platform" id="platform_id" class="dropStyle">
+            <option>Select Platform</option>
+            <option value="PS4">PS4</option>  
+						<option value="PS5">PS5</option> 
+						<option value="XBOX">XBOX</option> 
+						<option value="PC">PC</option>
+						<option value="Switch">Switch</option>  
+						<option value="Stadia">Stadia</option> 
+          </select>
+          <button class="btn btn-info" onclick="findGameByPlatform()"> Search by Platform </button>
+        </div>
+
+        <div class="genre" style="float:right;">
+          <select name="genre" id="genre_id" class="dropStyle">
+            <option>Select Genre</option>
+            <% for (i of genres) { %>
+              <option value=<%= i.genre %> ><%= i.genre %> </option>
+            <% } %>  
+          </select>
+          <button class="btn btn-info" onclick="findGameByGenre()"> Search by Genre </button>
+        </div>
+
+        <div class="mode" id="mode_id">
+          <select name="mode" class="dropStyle">
+            <option>Select Mode</option>
+            <% for (i of modes) { %>
+              <option value=<%= i.mode %> ><%= i.mode %> </option>
+            <% } %> 
+          </select>
+          <button class="btn btn-info" onclick="findGameByMode()"> Search by Mode </button>
+        </div>
+
+        <!-- Advanced search functionality -->
+        <br>
+        <button type="button" class="collapsible">Advanced Search</button>
+        <div class="content">        
+          <div id="Radio">
+						<input type="radio" name="price" value="0-20"> 
+						<label for="p1">$0-$20</label>
+						<input type="radio" name="price" value="20-40"> 
+						<label for="p2">$20-$40</label>
+						<input type="radio" name="price" value="40-60"> 
+						<label for="p3">$40-$60</label>
+						<input type="radio" name="price" value="60-80"> 
+						<label for="p4">$60-$80</label>
+						<button class="btn btn-info" onclick="findGameByPrice()"> Search by Price </button>
+        	</div>
+        </div>
+      </div>
+      <br>
+			<div id="holder"></div> 
+    </div>
+  </div>
+	<div class="space">
+	</div>
+  <%- include('partials/footer.ejs') %>
+
+</body>
+
+<script src="/js/advancedSearch.js"></script>
+<script src="/js/results.js"></script>
+
+</html>
