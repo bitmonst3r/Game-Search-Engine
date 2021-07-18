@@ -53,7 +53,8 @@ app.get("/searchByTitle", async function(req, res){
 app.get("/searchByPlatform", async function(req, res){
 
   let platform_id = req.query.platform;
-  let sql = `SELECT title, genre, platform, mode, price, releaseDate, image FROM game where platform LIKE ?`; 
+	console.log(platform_id);
+  let sql = `SELECT gameId, title, genre, platform, mode, price, releaseDate, image FROM game where platform LIKE ?`; 
   let params = [`%${platform_id}%`];
   let rows = await executeSQL(sql, params);
 
@@ -90,7 +91,7 @@ app.get("/searchByPrice", async function(req, res){
   let price_id = req.query.price;
   console.log(price_id);
   let price_split = price_id.split("-");
-  let sql = `SELECT title, genre, platform, mode, price, releaseDate, image FROM game where price >= ? AND price <= ?`; 
+  let sql = `SELECT gameId, title, genre, platform, mode, price, releaseDate, image FROM game where price >= ? AND price <= ?`; 
   let params = [`${price_split[0]}`, `${price_split[1]}`];
   let rows = await executeSQL(sql, params);
 

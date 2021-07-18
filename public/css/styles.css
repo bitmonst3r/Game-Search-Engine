@@ -10,18 +10,11 @@ body
 	overflow-x: hidden;
 }
 
-header {
-	background: rgba(255,255,255,.2);
-	width: 100%;
-	display: flex;
+.navbar-brand span{
+	color: white;
 }
-
-header .container {
-	margin: 30px auto;
-	display: flex;
-	flex-flow: row;
-	align-items: center;
-	position: relative;
+.navbar-brand img {
+	margin-left: 80px;
 }
 
 .logo-wrapper {
@@ -45,13 +38,20 @@ header .container {
 .site-name {
 	font-size: 16px;
 	font-weight: bold;
-	display: block;
 	letter-spacing: .5;
 	margin-bottom: 2px;
 }
 
 .slogan {
 	font-size: 13px;
+}
+
+.d-flex {
+	margin-right: 80px;
+}
+
+.d-flex a{
+	margin: 5px;
 }
 
 .logo-wrapper:after {
@@ -79,14 +79,6 @@ header .container {
 	background-position: center 26px;
 	z-index: 3;
 	transition: all 250ms;
-}
-
-a:hover .logo_main {
-	transform: scale(1.05);
-}
-
-header nav {
-margin-left: auto;
 }
 
 .container {
@@ -128,10 +120,6 @@ margin-left: auto;
 .a
 {
   margin-right: 10px;
-}
-
-.header span{
-	font-size: 2rem;
 }
 
 .column 
@@ -262,16 +250,6 @@ img.card-img-top {
 	height: 250px;
 }
 
-a.wishlistBtn {
-	text-decoration: none;
-	color: white;
-	font-weight: 400;
-}
-
-a.wishlistBtn:hover {
-	color: white;
-}
-
 .wishlist .card {
 	width: 65%;
   margin: 0 auto;
@@ -302,6 +280,15 @@ div.modal-content {
 
 .space {
 	height: 500px;
+}
+
+a#buy-game {
+	text-decoration: none;
+	color: #0DCAF0;
+}
+
+a#buy-game:hover {
+	color: white;
 }
 
 footer {

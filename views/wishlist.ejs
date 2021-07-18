@@ -12,7 +12,7 @@
   <title>Navi</title>
 </head>
 <body class="background">
-	<%- include('partials/navigation.ejs') %>
+	<%- include('partials/navbar.ejs') %>
 	<div class="wishlist">	
 		<div class="card p-4">
 			<div class="card-body text-center">
@@ -42,7 +42,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>   
-					<button class="btn btn-outline-info"><a href="" id="buy-game" class="wishlistBtn">Buy Game</a></button>
+					<a href="" id="buy-game" class="btn btn-outline-info" role="button">Buy Game</a>
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
       let response = await fetch(url);
       let data = await response.json();
       $("#gameInfo").html(`<img src="${data[0].image}" width="100"><br>${data[0].title} ${data[0].genre}<br>${data[0].platform}<br> ${data[0].mode}<br>${data[0].price}<br>${data[0].releaseDate}<br>`);
-			$("#buy-game").html(`<a href="${data[0].purchase}" id="buy-game" class="wishlistBtn">Buy Game</a>`);
+			$("#buy-game").html(`<a href="${data[0].purchase}" id="buy-game">Buy Game</a>`);
     }
 
 		function deleteGame() {

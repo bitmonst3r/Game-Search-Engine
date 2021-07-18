@@ -17,6 +17,7 @@ async function findGame() {
   $('#holder').html('');
   const url = `/searchByTitle?title=${gameName}`;
   const data = await fetchData(url);
+	console.log(data);
 
   for (let i=0; i<data.length; i++) {
     $('#holder').append(`<div class="card">
@@ -30,7 +31,7 @@ async function findGame() {
 						<p class="card-text"><b>Price:</b> ${data[i].price}</p>
 						<p class="card-text"><b>Release Date:</b> ${data[i].releaseDate}</p>
 						</div><hr>
-						<button class="btn btn-outline-info"><a href="#" class="wishlistBtn" gameId="${data[i].gameId}">Add to Wishlist</a></button>
+						<a href="#" class="btn btn-outline-info wishlistBtn" gameId="${data[i].gameId}" role="button">Add to Wishlist</a>
 						<script src="/js/wishlist.js"></script>
           </div>
         </div>`);
@@ -43,18 +44,22 @@ async function findGameByPrice() {
   $('#holder').html('');
   const url = `/searchByPrice?price=${priceLength}`;
   const data = await fetchData(url);
+	console.log(data);
 
   for (let i=0; i<data.length; i++) {
     $('#holder').append(`<div class="card">
           <img src="${data[i].image}" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">${data[i].title}</h5>
+            <h6 class="card-title">${data[i].title}</h6>
+						<div class="inner-card"><br>
             <p class="card-text">Genre: ${data[i].genre}</p>
 						<p class="card-text">Mode: ${data[i].mode}</p>
 						<p class="card-text">Platform: ${data[i].platform}</p>
 						<p class="card-text">Price: ${data[i].price}</p>
 						<p class="card-text">Release Date: ${data[i].releaseDate}</p>
-            <a href="#" gameId="${data[i].gameId}" class="btn btn-outline-info">Add to Wishlist</a>
+						</div><hr>
+            <a href="#" class="btn btn-outline-info wishlistBtn" gameId="${data[i].gameId}" role="button">Add to Wishlist</a>
+						<script src="/js/wishlist.js"></script>
           </div>
         </div>`);
   }
@@ -71,13 +76,16 @@ async function findGameByPlatform() {
     $('#holder').append(`<div class="card">
           <img src="${data[i].image}" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">${data[i].title}</h5>
+            <h6 class="card-title">${data[i].title}</h6>
+						<div class="inner-card"><br>
             <p class="card-text">Genre: ${data[i].genre}</p>
 						<p class="card-text">Mode: ${data[i].mode}</p>
 						<p class="card-text">Platform: ${data[i].platform}</p>
 						<p class="card-text">Price: ${data[i].price}</p>
 						<p class="card-text">Release Date: ${data[i].releaseDate}</p>
-            <a href="#" gameId="${data[i].gameId}" class="btn btn-outline-info">Add to Wishlist</a>
+					</div><hr>
+          <a href="#" class="btn btn-outline-info wishlistBtn" gameId="${data[i].gameId}" role="button">Add to Wishlist</a>
+						<script src="/js/wishlist.js"></script>
           </div>
         </div>`);
   }
@@ -94,13 +102,16 @@ async function findGameByGenre() {
     $('#holder').append(`<div class="card">
           <img src="${data[i].image}" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">${data[i].title}</h5>
+            <h6 class="card-title">${data[i].title}</h6>
+						<div class="inner-card"><br>
             <p class="card-text">Genre: ${data[i].genre}</p>
 						<p class="card-text">Mode: ${data[i].mode}</p>
 						<p class="card-text">Platform: ${data[i].platform}</p>
 						<p class="card-text">Price: ${data[i].price}</p>
 						<p class="card-text">Release Date: ${data[i].releaseDate}</p>
-            <a href="#" gameId="${data[i].gameId}" class="btn btn-outline-info">Add to Wishlist</a>
+						</div><hr>
+            <a href="#" class="btn btn-outline-info wishlistBtn" gameId="${data[i].gameId}" role="button">Add to Wishlist</a>
+						<script src="/js/wishlist.js"></script>
           </div>
         </div>`);
   }
@@ -117,13 +128,16 @@ async function findGameByMode() {
     $('#holder').append(`<div class="card">
           <img src="${data[i].image}" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">${data[i].title}</h5>
+            <h6 class="card-title">${data[i].title}</h6>
+						<div class="inner-card"><br>
             <p class="card-text">Genre: ${data[i].genre}</p>
 						<p class="card-text">Mode: ${data[i].mode}</p>
 						<p class="card-text">Platform: ${data[i].platform}</p>
 						<p class="card-text">Price: ${data[i].price}</p>
 						<p class="card-text">Release Date: ${data[i].releaseDate}</p>
-            <a href="#" gameId="${data[i].gameId}" class="btn btn-outline-info">Add to Wishlist</a>
+						</div>
+            <a href="#" class="btn btn-outline-info wishlistBtn" gameId="${data[i].gameId}" role="button">Add to Wishlist</a>
+						<script src="/js/wishlist.js"></script>
           </div>
         </div>`);
   }
